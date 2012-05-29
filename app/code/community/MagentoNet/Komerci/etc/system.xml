@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   payment
+ * @package    MagentoNet_Komerci
+ * @copyright  Copyright (c) 2011 MagentoNet (www.magento.net.br)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     MagentoNet <contato@magento.net.br>
+ */
+-->
+
+<config>
+	<sections>
+        <payment translate="label" module="payment">
+			<groups>
+		      	<MagentoNet_Komerci translate="label">
+                
+					<label>Komerci - WebService - MagentoNet</label>
+					<sort_order>675</sort_order>
+					<show_in_default>1</show_in_default>
+				  	<show_in_website>1</show_in_website>
+				  	<show_in_store>1</show_in_store>
+                    
+                    <comment>
+                        <![CDATA[
+                        <div>
+                            Versão: 0.0.1<br />
+                            Esse módulo foi desenvolvido por MagentoNet
+                            <br /><br /><hr />
+                        </div>
+                        ]]>
+                    </comment>
+				  	
+					<fields>
+                    
+				      	<active translate="label">
+							<label>Enabled</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+					  		<show_in_store>1</show_in_store>
+					    </active>
+					    <title translate="label">
+					  		<label>Título</label>
+					  		<frontend_type>text</frontend_type>
+					  		<sort_order>2</sort_order>
+					  		<show_in_default>1</show_in_default>
+					  		<show_in_website>1</show_in_website>
+					  		<show_in_store>1</show_in_store>
+							<comment>
+							<![CDATA[
+							<div>
+							    Nome que irá aparecer para o cliente
+							</div>
+							]]>
+						    </comment>
+				      	</title>
+					    <order_status translate="label">
+							<label>Status dos novos pedidos</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_order_status_new</source_model>
+					  		<sort_order>3</sort_order>
+					  		<show_in_default>1</show_in_default>
+					  		<show_in_website>1</show_in_website>
+					  		<show_in_store>1</show_in_store>
+				      	</order_status>
+						<filiacao translate="label">
+							<label>Número de filiação do estabelecimento no Komerci</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</filiacao>
+                                                <urs_webservice translate="label">
+							<label>Usuário do webservice</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>7</sort_order>
+                                                       <comment>É preciso cadastra-lo no partal da redecard (Útil somente para estornos)</comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</urs_webservice>
+                                                <pwd_webservice translate="label">
+							<label>Senha do webservice</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>7</sort_order>
+                                                       <comment>(Útil somente para estornos)</comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</pwd_webservice>
+						<tipo_parcelamento translate="label">
+						    <label>Escolha o tipo de Parcelamento (Se houver)</label>
+						    <frontend_type>select</frontend_type>
+						    <source_model>MagentoNet_Komerci_Model_Source_TipoParcelamento</source_model>
+						    <sort_order>6</sort_order>
+						    <show_in_default>1</show_in_default>
+						    <show_in_website>1</show_in_website>
+						    <show_in_store>1</show_in_store>
+						</tipo_parcelamento>
+						<num_max_parc translate="label">
+							<label>Numero máximo de parcelas</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>7</sort_order>
+                                                        <source_model>MagentoNet_Komerci_Model_Source_NumMaxParc</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</num_max_parc>
+                                             <valor_minimo translate="label">
+							<label>Valor Mínimo</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>7</sort_order>
+                                                       <comment>Valor mínimo da parcela</comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</valor_minimo>
+					
+                        
+						<parcelamento_semjuros translate="label">
+						    <label>Parcelamento sem juros</label>
+						    <frontend_type>select</frontend_type>
+						    <source_model>MagentoNet_Komerci_Model_Source_NumMaxParcSemJuros</source_model>
+						    <sort_order>8</sort_order>
+						    <show_in_default>1</show_in_default>
+						    <show_in_website>1</show_in_website>
+						    <show_in_store>1</show_in_store>
+						</parcelamento_semjuros>
+
+						<desconto_avista translate="label">
+						    <label>Desconto à vista</label>
+						    <frontend_type>select</frontend_type>
+						    <source_model>adminhtml/system_config_source_yesno</source_model>
+						    <sort_order>9</sort_order>
+						    <show_in_default>1</show_in_default>
+						    <show_in_website>1</show_in_website>
+						    <show_in_store>1</show_in_store>
+	
+						</desconto_avista>
+                        
+						<valor_desconto_avista translate="label">
+						    <label>Desconto a vista em %</label>
+						    <frontend_type>text</frontend_type>
+						    
+						    <sort_order>10</sort_order>
+						    <show_in_default>1</show_in_default>
+						    <show_in_website>1</show_in_website>
+						    <show_in_store>1</show_in_store>
+						     <depends><desconto_avista>1</desconto_avista></depends>
+				   		 <comment>Essa opção funciona apenas quando o desconto à vista está ativado.</comment>
+						</valor_desconto_avista>
+
+						<parcelamento_juros translate="label">
+						    <label>Parcelamento com juros(Taxa de juros ao mês) em %</label>
+						    <frontend_type>text</frontend_type>
+						    <sort_order>11</sort_order>
+						    <show_in_default>1</show_in_default>
+						    <show_in_website>1</show_in_website>
+						    <show_in_store>1</show_in_store>
+						</parcelamento_juros>
+
+                                                <msg_add translate="label">
+						    <label>Mensagem adicional</label>
+						    <frontend_type>textarea</frontend_type>
+						    <sort_order>12</sort_order>
+						    <show_in_default>1</show_in_default>
+						    <show_in_website>1</show_in_website>
+						    <show_in_store>1</show_in_store>
+                                                     <comment>O conteúdo deste campo é exibido na escolha da forma de pagamento, no fechamento dos pedidos.</comment>
+						</msg_add>
+						
+                        
+                       
+						<sort_order translate="label">
+						    <label>Sort order</label>
+						    <frontend_type>text</frontend_type>
+						    <sort_order>100</sort_order>
+						    <show_in_default>1</show_in_default>
+						    <show_in_website>1</show_in_website>
+						    <show_in_store>1</show_in_store>
+						</sort_order>
+                        
+			  	     </fields>
+                </MagentoNet_Komerci>
+            </groups>
+		</payment>
+	</sections>
+</config>

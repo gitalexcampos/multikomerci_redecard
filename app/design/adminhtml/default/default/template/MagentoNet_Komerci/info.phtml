@@ -1,0 +1,29 @@
+<?php
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   payment
+ * @package    MagentoNet_Komerci
+ * @copyright  Copyright (c) 2011 MagentoNet (www.magento.net.br)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     MagentoNet <contato@magento.net.br>
+ */
+		
+?>
+<?php if($_info = $this->getInfo()): ?>
+<?php $additionaldata = unserialize($this->getInfo()->getData('additional_data')); ?>
+<?php $parcelas = isset($additionaldata["Cc_parcelas"]) ? $additionaldata["Cc_parcelas"] : '' ?>
+<?php echo $this->__('Nome no cartão: %s', $this->htmlEscape($this->getInfo()->getCcOwner())) ?><br/>
+<?php echo $this->__('Últimos quatro números do cartão: **** **** **** %s', $this->htmlEscape($this->getInfo()->getCcLast4())) ?><br/>
+<?php echo $this->__('Data de expiração: %s/%s', $this->htmlEscape($this->getInfo()->getCcExpMonth()), $this->htmlEscape($this->getInfo()->getCcExpYear())) ?><br />
+<?php echo $this->__('Número de Parcelas: %s', $parcelas) ?><br />
+<!-- <br><a href="/komerci/Pay/estorno/idorder/">Estornar pagamento</a> -->
+<?php $adddata = unserialize($this->getInfo()->getData('additional_data')); ?>
+<?php echo $this->__('Código e mensagem da transação: %s - %s', $additionaldata["autorizacao"]['codigo'], $additionaldata["autorizacao"]['mensagem']) ?>
+<?php else: ?>
+<?php endif; ?>

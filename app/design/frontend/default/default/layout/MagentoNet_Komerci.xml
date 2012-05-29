@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   payment
+ * @package    MagentoNet_Komerci
+ * @copyright  Copyright (c) 2011 MagentoNet (www.magento.net.br)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     MagentoNet <contato@magento.net.br>
+ */
+-->
+<layout>
+    
+    <MagentoNet_Komerci_pay_success translate="label">
+        <label>Transação registrada com sucesso no PagSeguro</label>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="MagentoNet_Komerci/success" name="MagentoNet_Komerci.success" template="MagentoNet_Komerci/success.phtml"/>
+        </reference>
+    </MagentoNet_Komerci_pay_success>
+    
+    <MagentoNet_Komerci_pay_installments translate="label">
+        <label>Tabela de parcelamento do PagSeguro</label>
+        <reference name="root">
+            <action method="setTemplate"><template>MagentoNet_Komerci/installments_template.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="MagentoNet_Komerci/installments" name="MagentoNet_Komerci_installments" as="MagentoNet_Komerci_installments" />
+        </reference>
+    </MagentoNet_Komerci_pay_installments>
+
+    <sales_order_view>
+        <reference name="sales.order.view">
+            <block type="MagentoNet_Komerci/paylink" name="MagentoNet_Komerci_paylink" as="MagentoNet_Komerci_paylink" />
+        </reference>
+    </sales_order_view>
+
+    <catalog_product_view>
+        <reference name="product.info">
+            <block type="MagentoNet_Komerci/installments" name="MagentoNet_Komerci_installments" as="MagentoNet_Komerci_installments" />
+        </reference>
+    </catalog_product_view>
+
+</layout>

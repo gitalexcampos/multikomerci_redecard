@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   payment
+ * @package    MagentoNet_Komerci
+ * @copyright  Copyright (c) 2011 MagentoNet (www.magento.net.br)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     MagentoNet <contato@magento.net.br>
+ */
+-->
+
+<config>
+    <modules>
+        <MagentoNet_Komerci>
+            <version>1.1.5</version>          
+        </MagentoNet_Komerci>
+    </modules>
+    <global>
+        <models>
+            <MagentoNet_Komerci>
+                <class>MagentoNet_Komerci_Model</class>
+            </MagentoNet_Komerci>
+        </models>
+        <resources>
+            <MagentoNet_Komerci_setup>
+                <setup>
+                    <module>MagentoNet_Komerci</module>
+                    <class>Mage_Sales_Model_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </MagentoNet_Komerci_setup>
+            <MagentoNet_Komerci_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </MagentoNet_Komerci_write>
+            <MagentoNet_Komerci_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </MagentoNet_Komerci_read>
+        </resources>
+        <helpers>
+            <MagentoNet_Komerci>
+                <class>MagentoNet_Komerci_Helper</class>
+            </MagentoNet_Komerci>
+        </helpers>
+        <blocks>
+            <MagentoNet_Komerci>
+                <class>MagentoNet_Komerci_Block</class>
+            </MagentoNet_Komerci>
+        </blocks>
+    </global>
+    <frontend>      
+        <routers>
+            <MagentoNet_Komerci>
+                <use>standard</use>
+                <args>
+                    <module>MagentoNet_Komerci</module>
+                    <frontName>komerci</frontName>
+                </args>
+            </MagentoNet_Komerci>
+        </routers>
+        <translate>
+            <modules>
+                <MagentoNet_Komerci>
+                    <files>
+                        <default>MagentoNet_Komerci.csv</default>
+                    </files>
+                </MagentoNet_Komerci>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <MagentoNet_Komerci>
+                    <file>MagentoNet_Komerci.xml</file>
+                </MagentoNet_Komerci>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <MagentoNet_Komerci>
+                    <files>
+                        <default>MagentoNet_Komerci.csv</default>
+                    </files>
+                </MagentoNet_Komerci>
+            </modules>
+        </translate>        
+    </adminhtml>
+
+    <default>
+         <payment>
+             <MagentoNet_Komerci>
+                  <model>MagentoNet_Komerci_Model_Payment</model>
+                  <active>0</active>
+                  <title>Pagamento por cartão de crédito</title>
+                  <order_status>pending</order_status>
+                  <filiacao>000000</filiacao>
+                  <msg_add>Nossa loja tem um ambiente seguro com uma chave de criptografia de 256bits..</msg_add>
+                  <tipo_parcelamento>0</tipo_parcelamento>
+                  <num_max_parc>0</num_max_parc>
+                  <parcelamento_semjuros>0</parcelamento_semjuros>      
+                  <desconto_avista>0</desconto_avista>                  
+            </MagentoNet_Komerci>
+        </payment>
+    </default>
+</config>
