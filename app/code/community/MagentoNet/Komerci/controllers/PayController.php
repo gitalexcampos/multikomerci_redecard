@@ -205,7 +205,7 @@ class MagentoNet_Komerci_PayController extends Mage_Core_Controller_Front_Action
                                                            
                                                  //$this->_redirect('komerci/pay/success/codigo/'.$autorizacao['codret'].'/motivo/'.$autorizacao['msgret'].'/orderid/'.$orderId);
                                                 
-                                                
+                                                 $this->getCheckout()->setLastOrderId($orderId);
                                                  $this->getCheckout()->setLastQuoteId(Mage::getSingleton('checkout/cart')->getQuote()->getId());
                                                  $this->getCheckout()->setLastSuccessQuoteId(Mage::getSingleton('checkout/cart')->getQuote()->getId());
                                                  $this->_redirect('checkout/onepage/success', array('_secure'=>true));
