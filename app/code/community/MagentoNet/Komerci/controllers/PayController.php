@@ -76,7 +76,7 @@ class MagentoNet_Komerci_PayController extends Mage_Core_Controller_Front_Action
 
         if (empty($orderId)) {
             $orderId = $session->getLastOrderId();
-            $session->clear(); //Limpa o carrinho
+            //$session->clear(); //Limpa o carrinho
         }
 
         //pega id da loja
@@ -205,9 +205,9 @@ class MagentoNet_Komerci_PayController extends Mage_Core_Controller_Front_Action
                                                            
                                                  //$this->_redirect('komerci/pay/success/codigo/'.$autorizacao['codret'].'/motivo/'.$autorizacao['msgret'].'/orderid/'.$orderId);
                                                 
-                                                 $this->getCheckout()->setLastOrderId($orderId);
-                                                 $this->getCheckout()->setLastQuoteId(Mage::getSingleton('checkout/cart')->getQuote()->getId());
-                                                 $this->getCheckout()->setLastSuccessQuoteId(Mage::getSingleton('checkout/cart')->getQuote()->getId());
+                                                $this->getCheckout()->setLastOrderId($orderId); 
+                                                 $this->getCheckout()->setLastQuoteId($session->getLastQuoteId()); 
+                                                 $this->getCheckout()->setLastSuccessQuoteId($session->getLastSuccessQuoteId());
                                                  $this->_redirect('checkout/onepage/success', array('_secure'=>true));
         } else {
             //caso tenha acontecido algum erro, redireciona apra página de erro de erro personalizada
