@@ -9,7 +9,7 @@
  * http://opensource.org/licenses/osl-3.0.php
  *
  * @category   payment
- * @package    MagentoNet_Komerci
+ * @package    Multikomerce_Redecard
  * @copyright  Copyright (c) 2011 MagentoNet (www.magento.net.br)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @author     MagentoNet <contato@magento.net.br>
@@ -18,91 +18,91 @@
 
 <config>
     <modules>
-        <MagentoNet_Komerci>
-            <version>1.1.5</version>          
-        </MagentoNet_Komerci>
+        <Multikomerce_Redecard>
+            <version>1.2.5</version>          
+        </Multikomerce_Redecard>
     </modules>
     <global>
         <models>
-            <MagentoNet_Komerci>
-                <class>MagentoNet_Komerci_Model</class>
-            </MagentoNet_Komerci>
+            <Multikomerce_Redecard>
+                <class>Multikomerce_Redecard_Model</class>
+            </Multikomerce_Redecard>
         </models>
         <resources>
-            <MagentoNet_Komerci_setup>
+            <Multikomerce_Redecard_setup>
                 <setup>
-                    <module>MagentoNet_Komerci</module>
+                    <module>Multikomerce_Redecard</module>
                     <class>Mage_Sales_Model_Mysql4_Setup</class>
                 </setup>
                 <connection>
                     <use>core_setup</use>
                 </connection>
-            </MagentoNet_Komerci_setup>
-            <MagentoNet_Komerci_write>
+            </Multikomerce_Redecard_setup>
+            <Multikomerce_Redecard_write>
                 <connection>
                     <use>core_write</use>
                 </connection>
-            </MagentoNet_Komerci_write>
-            <MagentoNet_Komerci_read>
+            </Multikomerce_Redecard_write>
+            <Multikomerce_Redecard_read>
                 <connection>
                     <use>core_read</use>
                 </connection>
-            </MagentoNet_Komerci_read>
+            </Multikomerce_Redecard_read>
         </resources>
         <helpers>
-            <MagentoNet_Komerci>
-                <class>MagentoNet_Komerci_Helper</class>
-            </MagentoNet_Komerci>
+            <Multikomerce_Redecard>
+                <class>Multikomerce_Redecard_Helper</class>
+            </Multikomerce_Redecard>
         </helpers>
         <blocks>
-            <MagentoNet_Komerci>
-                <class>MagentoNet_Komerci_Block</class>
-            </MagentoNet_Komerci>
+            <Multikomerce_Redecard>
+                <class>Multikomerce_Redecard_Block</class>
+            </Multikomerce_Redecard>
         </blocks>
     </global>
     <frontend>      
         <routers>
-            <MagentoNet_Komerci>
+            <Multikomerce_Redecard>
                 <use>standard</use>
                 <args>
-                    <module>MagentoNet_Komerci</module>
+                    <module>Multikomerce_Redecard</module>
                     <frontName>komerci</frontName>
                 </args>
-            </MagentoNet_Komerci>
+            </Multikomerce_Redecard>
         </routers>
         <translate>
             <modules>
-                <MagentoNet_Komerci>
+                <Multikomerce_Redecard>
                     <files>
-                        <default>MagentoNet_Komerci.csv</default>
+                        <default>Multikomerce_Redecard.csv</default>
                     </files>
-                </MagentoNet_Komerci>
+                </Multikomerce_Redecard>
             </modules>
         </translate>
         <layout>
             <updates>
-                <MagentoNet_Komerci>
-                    <file>MagentoNet_Komerci.xml</file>
-                </MagentoNet_Komerci>
+                <Multikomerce_Redecard>
+                    <file>Multikomerce_Redecard.xml</file>
+                </Multikomerce_Redecard>
             </updates>
         </layout>
     </frontend>
     <adminhtml>
         <translate>
             <modules>
-                <MagentoNet_Komerci>
+                <Multikomerce_Redecard>
                     <files>
-                        <default>MagentoNet_Komerci.csv</default>
+                        <default>Multikomerce_Redecard.csv</default>
                     </files>
-                </MagentoNet_Komerci>
+                </Multikomerce_Redecard>
             </modules>
         </translate>        
     </adminhtml>
 
     <default>
          <payment>
-             <MagentoNet_Komerci>
-                  <model>MagentoNet_Komerci_Model_Payment</model>
+             <Multikomerce_Redecard>
+                  <model>Multikomerce_Redecard_Model_Payment</model>
                   <active>0</active>
                   <title>Pagamento por cartão de crédito</title>
                   <order_status>pending</order_status>
@@ -112,7 +112,7 @@
                   <num_max_parc>0</num_max_parc>
                   <parcelamento_semjuros>0</parcelamento_semjuros>      
                   <desconto_avista>0</desconto_avista>                  
-            </MagentoNet_Komerci>
+            </Multikomerce_Redecard>
         </payment>
     </default>
 </config>

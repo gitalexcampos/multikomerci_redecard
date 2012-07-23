@@ -8,13 +8,13 @@
  * http://opensource.org/licenses/osl-3.0.php
  *
  * @category   payment
- * @package    MagentoNet_Komerci
+ * @package    Multikomerce_Redecard
  * @copyright  Copyright (c) 2011 MagentoNet (www.magento.net.br)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @author     MagentoNet <contato@magento.net.br>
  */
 
-class MagentoNet_Komerci_PayController extends Mage_Core_Controller_Front_Action
+class Multikomerce_Redecard_PayController extends Mage_Core_Controller_Front_Action
 {
     
     /**
@@ -22,7 +22,7 @@ class MagentoNet_Komerci_PayController extends Mage_Core_Controller_Front_Action
      */
     public function getKomerci()
     {
-        return Mage::getSingleton('MagentoNet_Komerci/payment');
+        return Mage::getSingleton('Multikomerce_Redecard/payment');
     }
     
     
@@ -84,7 +84,7 @@ class MagentoNet_Komerci_PayController extends Mage_Core_Controller_Front_Action
                 
         
         //chama model do webservice do komerci
-        $webservice = Mage::getModel('MagentoNet_Komerci/Komerci');
+        $webservice = Mage::getModel('Multikomerce_Redecard/Komerci');
         /*===========================================================================================
          * Código para efetuar a transação pelo webservice komerci
          * 

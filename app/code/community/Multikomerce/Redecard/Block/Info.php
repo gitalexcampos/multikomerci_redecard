@@ -24,7 +24,7 @@
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-class MagentoNet_Komerci_Block_Info extends Mage_Payment_Block_Info
+class Multikomerce_Redecard_Block_Info extends Mage_Payment_Block_Info
 {
     /**
      * Init default template for block
@@ -32,7 +32,7 @@ class MagentoNet_Komerci_Block_Info extends Mage_Payment_Block_Info
     protected function _construct()
     {
         parent::_construct();
-        $this->setTemplate('MagentoNet_Komerci/info.phtml');
+        $this->setTemplate('Multikomerce_Redecard/info.phtml');
     }
     
     /* public function getCcNumber() 

@@ -8,7 +8,7 @@
  * http://opensource.org/licenses/osl-3.0.php
  *
  * @category   payment
- * @package    MagentoNet_Komerci
+ * @package    Multikomerce_Redecard
  * @copyright  Copyright (c) 2011 MagentoNet (www.magento.net.br)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @author     MagentoNet <contato@magento.net.br>

@@ -8,20 +8,20 @@
  * http://opensource.org/licenses/osl-3.0.php
  *
  * @category   payment
- * @package    MagentoNet_Komerci
+ * @package    Multikomerce_Redecard
  * @copyright  Copyright (c) 2011 MagentoNet (www.magento.net.br)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @author     MagentoNet <contato@magento.net.br>
  */
-    
-if ($this->getShowMessage()): ?>
 
-        <div style="overflow:hidden;">
-        <fieldset class="form-list">
-            <ul id="payment_form_<?php echo $this->getMethodCode(); ?>" style="display:none;">
-                <li><?php echo $this->getMessage(); ?></li>
-            </ul>
-        </fieldset>
-        </div>
+class Multikomerce_Redecard_Model_Source_TipoParcelamento
+{
+	public function toOptionArray ()
+	{
+            $options = array();
+            $options['06'] = Mage::helper('adminhtml')->__('Parcelado Emissor');
+            $options['08'] = Mage::helper('adminhtml')->__('Parcelado Estabelecimento');
+            return $options;
+	}
 
-<?php endif; ?>
+}

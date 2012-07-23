@@ -25,41 +25,41 @@
  */
 ?>
 <fieldset class="form-list">
-    <ul id="payment_form_MagentoNet_Komerci" style="display:none;">
+    <ul id="payment_form_Multikomerce_Redecard" style="display:none;">
 <li class="first">
         <!-- label for="cielo_cc_type" class="hidden"><em>*</em>Tipo de Cartão de Crédito</label --><br>
 		<ul class="card-logo">
                 	<li style="width: 20%; float: left;">
-				<label for="card-VI"><img src="/skin/frontend/default/default/images/komerci/Visa.jpg"><br>
+				<label for="card-VI"><img style="width: 50px;" src="/skin/frontend/default/default/images/komerci/Visa.jpg"><br>
 				<input name="payment[cc_type]" type="radio" value="VI" id="komerci_cc_type" class="validate-one-required-by-name">
 				</label></li>
                 	<li style="width: 20%; float: left;">
-				<label for="card-MC"><img src="/skin/frontend/default/default/images/komerci/Master.jpg"><br>
+				<label for="card-MC"><img style="width: 50px;" src="/skin/frontend/default/default/images/komerci/Master.jpg"><br>
 				<input name="payment[cc_type]" type="radio" value="MC" id="komerci_cc_type" class="validate-one-required-by-name">
 		         	</label></li>
                                 <li style="width: 20%; float: left;">
-				<label for="card-DN"><img src="/skin/frontend/default/default/images/komerci/Dinners.jpg"><br>
+				<label for="card-DN"><img style="width: 50px;" src="/skin/frontend/default/default/images/komerci/Dinners.jpg"><br>
 				<input name="payment[cc_type]" type="radio" value="MC" id="komerci_cc_type" class="validate-one-required-by-name">
 		         	</label></li>
                 </ul>
     </li>
         <li>
             <div class="input-box">
-                <label for="MagentoNet_komerci_cc_owner"><?php echo $this->__('Name on Card') ?> <span class="required">*</span></label><br/>
-                <input type="text" title="<?php echo $this->__('Name on Card') ?>" class="required-entry input-text" id="MagentoNet_komerci_cc_owner" name="payment[cc_owner]" value="<?php echo $this->htmlEscape($this->getInfoData('cc_owner')) ?>"/>
+                <label for="Multikomerce_Redecard_cc_owner"><?php echo $this->__('Name on Card') ?> <span class="required">*</span></label><br/>
+                <input type="text" title="<?php echo $this->__('Name on Card') ?>" class="required-entry input-text" id="Multikomerce_Redecard_cc_owner" name="payment[cc_owner]" value="<?php echo $this->htmlEscape($this->getInfoData('cc_owner')) ?>"/>
             </div>
         </li>
         <li>
             <div class="input-box">
-                <label for="MagentoNet_komerci_cc_number"><?php echo $this->__('Número do Cartão') ?> <span class="required">*</span></label><br/>
-                <input type="text" id="MagentoNet_komerci_cc_number" name="payment[cc_number]" title="<?php echo $this->__('Laser Card Number') ?>" class="required-entry input-text" value=""/>
+                <label for="Multikomerce_Redecard_cc_number"><?php echo $this->__('Número do Cartão') ?> <span class="required">*</span></label><br/>
+                <input type="text" id="Multikomerce_Redecard_cc_number" name="payment[cc_number]" title="<?php echo $this->__('Laser Card Number') ?>" class="required-entry input-text" value=""/>
             </div>
         </li>
         <li>
             <div class="input-box">
-                <label for="MagentoNet_komerci_expiration"><?php echo $this->__('Expiration Date') ?> <span class="required">*</span></label><br/>
+                <label for="Multikomerce_Redecard_expiration"><?php echo $this->__('Expiration Date') ?> <span class="required">*</span></label><br/>
                 <div class="v-fix">
-                <select id="MagentoNet_komerci_expiration" style="width:140px;" name="payment[cc_exp_month]" class="required-entry">
+                <select id="Multikomerce_Redecard_expiration" style="width:140px;" name="payment[cc_exp_month]" class="required-entry">
                 <?php $_ccExpMonth = $this->getInfoData('cc_exp_month') ?>
                 <?php foreach ($this->getCcMonths() as $k=>$v): ?>
                     <option value="<?php echo $k?$k:'' ?>"<?php if($k==$_ccExpMonth): ?> selected="selected"<?php endif ?>><?php echo $v ?></option>
@@ -69,7 +69,7 @@
                 
                 <div class="v-fix" style="padding-left:5px;">
                 <?php $_ccExpYear = $this->getInfoData('cc_exp_year') ?>
-                <select id="MagentoNet_komerci_expiration_yr" style="width:103px;" name="payment[cc_exp_year]" class="required-entry">
+                <select id="Multikomerce_Redecard_expiration_yr" style="width:103px;" name="payment[cc_exp_year]" class="required-entry">
                 <?php foreach ($this->getCcYears() as $k=>$v): ?>
                     <option value="<?php echo $k?$k:'' ?>"<?php if($k==$_ccExpYear): ?> selected="selected"<?php endif ?>><?php echo $v ?></option>
                 <?php endforeach ?>
@@ -80,16 +80,16 @@
         
         <li>
             <div class="input-box">
-                <label for="MagentoNet_komerci_cc_cid"><?php echo $this->__('Card Verification Number') ?> <span class="required">*</span></label><br/>
-                <div class="v-fix"><input type="text" title="<?php echo $this->__('Card Verification Number') ?>" class="required-entry input-text" id="MagentoNet_komerci_cc_cid" name="payment[cc_cid]" style="width:3em;" value=""/></div>
+                <label for="Multikomerce_Redecard_cc_cid"><?php echo $this->__('Card Verification Number') ?> <span class="required">*</span></label><br/>
+                <div class="v-fix"><input type="text" title="<?php echo $this->__('Card Verification Number') ?>" class="required-entry input-text" id="Multikomerce_Redecard_cc_cid" name="payment[cc_cid]" style="width:3em;" value=""/></div>
                 &nbsp;
                 <a href="#" class="cvv-what-is-this"><?php echo $this->__('What is this?') ?></a>
             </div>
         </li>
          <li>
-        <label for="MagentoNet_komerci_parcelas"><?php echo $this->__('Parcelas') ?> </label><br />
+        <label for="Multikomerce_Redecard_parcelas"><?php echo $this->__('Parcelas') ?> </label><br />
         <div class="input-box">
-            <select id="MagentoNet_komerci_parcelas" name="payment[cc_parcelas]">
+            <select id="Multikomerce_Redecard_parcelas" name="payment[cc_parcelas]">
 							<?php foreach($this->getParcelas() as $parcela): ?>
 								<option value="<?php echo $parcela['parcela'] ?>"><?php echo $parcela['label'] ?></option>
 							<?php endforeach ?>

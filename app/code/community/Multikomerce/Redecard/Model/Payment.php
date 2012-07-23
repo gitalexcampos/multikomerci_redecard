@@ -8,18 +8,18 @@
  * http://opensource.org/licenses/osl-3.0.php
  *
  * @category   payment
- * @package    MagentoNet_Komerci
+ * @package    Multikomerce_Redecard
  * @copyright  Copyright (c) 2011 MagentoNet (www.magento.net.br)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @author     MagentoNet <contato@magento.net.br>
  */
 
-class MagentoNet_Komerci_Model_Payment extends Mage_Payment_Model_Method_Abstract
+class Multikomerce_Redecard_Model_Payment extends Mage_Payment_Model_Method_Abstract
 {
 
-    protected $_code  = 'MagentoNet_Komerci';
-    protected $_formBlockType = 'MagentoNet_Komerci/form';
-    protected $_infoBlockType = 'MagentoNet_Komerci/info';
+    protected $_code  = 'Multikomerce_Redecard';
+    protected $_formBlockType = 'Multikomerce_Redecard/form';
+    protected $_infoBlockType = 'Multikomerce_Redecard/info';
     protected $_canUseInternal = true;
     protected $_canUseForMultishipping = false;
     //protected $_canCapture = true;

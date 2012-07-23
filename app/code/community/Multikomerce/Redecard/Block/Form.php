@@ -8,19 +8,19 @@
  * http://opensource.org/licenses/osl-3.0.php
  *
  * @category   payment
- * @package    MagentoNet_Komerci
+ * @package    Multikomerce_Redecard
  * @copyright  Copyright (c) 2011 MagentoNet (www.magento.net.br)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @author     MagentoNet <contato@magento.net.br>
  */
 
 
-class MagentoNet_Komerci_Block_Form extends Mage_Payment_Block_Form
+class Multikomerce_Redecard_Block_Form extends Mage_Payment_Block_Form
 {
     protected function _construct()
     {
         parent::_construct();
-        $this->setTemplate('MagentoNet_Komerci/form.phtml');
+        $this->setTemplate('Multikomerce_Redecard/form.phtml');
     }
     
     //pega configurações do magento
@@ -63,13 +63,13 @@ class MagentoNet_Komerci_Block_Form extends Mage_Payment_Block_Form
     
     public function getParcelas(){
              
-		$max_parcelas = Mage::getStoreConfig('payment/MagentoNet_Komerci/num_max_parc');
-		$valor_minimo = Mage::getStoreConfig('payment/MagentoNet_Komerci/valor_minimo');
-		$parcelas_sem_juros = Mage::getStoreConfig('payment/MagentoNet_Komerci/parcelamento_semjuros');
-		$taxa_juros = Mage::getStoreConfig('payment/MagentoNet_Komerci/parcelamento_juros');
+		$max_parcelas = Mage::getStoreConfig('payment/Multikomerce_Redecard/num_max_parc');
+		$valor_minimo = Mage::getStoreConfig('payment/Multikomerce_Redecard/valor_minimo');
+		$parcelas_sem_juros = Mage::getStoreConfig('payment/Multikomerce_Redecard/parcelamento_semjuros');
+		$taxa_juros = Mage::getStoreConfig('payment/Multikomerce_Redecard/parcelamento_juros');
                 
-                $descontoavista = Mage::getStoreConfig('payment/MagentoNet_Komerci/desconto_avista');
-                $descontoavista_valor = Mage::getStoreConfig('payment/MagentoNet_Komerci/valor_desconto_avista');
+                $descontoavista = Mage::getStoreConfig('payment/Multikomerce_Redecard/desconto_avista');
+                $descontoavista_valor = Mage::getStoreConfig('payment/Multikomerce_Redecard/valor_desconto_avista');
                 
 
 		$total = Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal();
