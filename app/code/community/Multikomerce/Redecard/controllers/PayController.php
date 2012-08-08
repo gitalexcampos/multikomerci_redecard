@@ -205,6 +205,10 @@ class Multikomerce_Redecard_PayController extends Mage_Core_Controller_Front_Act
                                                            
                                                  //$this->_redirect('komerci/pay/success/codigo/'.$autorizacao['codret'].'/motivo/'.$autorizacao['msgret'].'/orderid/'.$orderId);
                                                 
+                                                //envia email de confirmação da compra
+                                                $order->sendNewOrderEmail();
+					
+                                                
                                                 $this->getCheckout()->setLastOrderId($orderId); 
                                                  $this->getCheckout()->setLastQuoteId($session->getLastQuoteId()); 
                                                  $this->getCheckout()->setLastSuccessQuoteId($session->getLastSuccessQuoteId());
