@@ -103,6 +103,7 @@ class Multikomerce_Redecard_Model_komerci extends Mage_Core_Model_Abstract
                 try {
                         $komerci = new SoapClient('https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap.asmx?WSDL',
                                 array(
+                                        'local_cert'            => Mage::getBaseDir() . '/app/code/community/Multikomerci/Redecard/Model/komerci.redecard.cer',
                                         'trace'                 => 1,
                                         'exceptions'                    => 1,
                                         'style'                 => SOAP_DOCUMENT,
